@@ -2,6 +2,7 @@ package com.sr.recommender.user;
 
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.TanimotoCoefficientSimilarity;
@@ -14,9 +15,8 @@ public class UserJaccardRecommenderBuilder implements RecommenderBuilder {
 
     public Recommender buildRecommender(DataModel dataModel) throws TasteException {
         UserSimilarity similarity = new TanimotoCoefficientSimilarity(dataModel);
-        UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, dataModel);
+        UserNeighborhood neighborhood = new NearestNUserNeighborhood(20,0.2, similarity, dataModel);
         return new GenericUserBasedRecommender(dataModel, neighborhood, similarity);
     }
 }
 
-}

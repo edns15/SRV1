@@ -25,32 +25,32 @@ public class UserJaccardMain {
         System.out.println("User Jaccard");
 
         UserJaccardRecommenderBuilder recommenderBuilder = new UserJaccardRecommenderBuilder();
-        DataModel artistModel = DataRecommendationModels.instace().getModel(DataRecommendationModels.artist_model);
+        DataModel artistModel = DataRecommendationModels.instance().getModel(DataRecommendationModels.artist_model);
         Recommender artistRecommender = recommenderBuilder.buildRecommender(artistModel);
         List<RecommendedItem> recommendations = artistRecommender.recommend(2, 3);
         for (RecommendedItem recommendation : recommendations) { System.out.println(recommendation);
         }
 
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("1"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("2"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("3"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("4"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("5"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("6"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("7"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("8"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("9"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("10"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("11"),Long.parseLong("4"));
-        DataRecommendationModels.instace().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("12"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("1"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("2"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("3"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("4"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("5"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("6"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("7"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("8"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("9"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("10"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("11"),Long.parseLong("4"));
+        DataRecommendationModels.instance().addRating(DataRecommendationModels.artist_model,Long.parseLong("992"),Long.parseLong("12"),Long.parseLong("4"));
 
 
-        DataRecommendationModels.instace().buildModel(DataRecommendationModels.artist_model);
+        DataRecommendationModels.instance().buildModel(DataRecommendationModels.artist_model);
 
         System.out.println("Retraining jaccard");
 
         recommenderBuilder = new UserJaccardRecommenderBuilder();
-        artistModel = DataRecommendationModels.instace().getModel(DataRecommendationModels.artist_model);
+        artistModel = DataRecommendationModels.instance().getModel(DataRecommendationModels.artist_model);
         artistRecommender = recommenderBuilder.buildRecommender(artistModel);
         recommendations = artistRecommender.recommend(992, 3);
         for (RecommendedItem recommendation : recommendations) { System.out.println(recommendation);

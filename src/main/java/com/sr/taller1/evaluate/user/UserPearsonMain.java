@@ -24,7 +24,7 @@ public class UserPearsonMain {
         UserPearsonRecommenderBuilder recommenderBuilder = new UserPearsonRecommenderBuilder();
 
         System.out.println("User Pearson");
-        DataModel artistModel = DataRecommendationModels.instace().getModel(DataRecommendationModels.artist_model);
+        DataModel artistModel = DataRecommendationModels.instance().getModel(DataRecommendationModels.artist_model);
         Recommender artistRecommender = recommenderBuilder.buildRecommender(artistModel);
         List<RecommendedItem> recommendations = artistRecommender.recommend(2, 3);
         for (RecommendedItem recommendation : recommendations) { System.out.println(recommendation);

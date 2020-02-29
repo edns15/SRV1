@@ -42,7 +42,10 @@ public class DataRecommendationModels {
     private HashMap<Long,String> track_ids= new HashMap<>();
     private HashMap<Long,String> user_ids= new HashMap<>();
 
-    public static DataRecommendationModels instace() throws IOException {
+    private DataRecommendationModels(){
+    }
+
+    public static DataRecommendationModels instance() throws IOException {
         if(instance == null) {
             instance = new DataRecommendationModels();
             instance.init();
@@ -71,6 +74,10 @@ public class DataRecommendationModels {
         }
     }
 
+    public String getUser(Long id){
+        return user_ids.get(id);
+    }
+
     private void loadTracks() throws IOException {
         File file = this.loadFileFromResource(track_ids_file);
 
@@ -86,6 +93,10 @@ public class DataRecommendationModels {
         }
     }
 
+    public String getTrack(Long id){
+        return track_ids.get(id);
+    }
+
     private void loadArtists() throws IOException {
         File file = this.loadFileFromResource(artist_ids_file);
 
@@ -99,6 +110,10 @@ public class DataRecommendationModels {
         } catch (IOException e) {
             throw e;
         }
+    }
+
+    public String getArtis(Long id){
+        return artist_ids.get(id);
     }
 
     private File loadFileFromResource(String fileName){

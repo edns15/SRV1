@@ -1,6 +1,7 @@
 package com.sr.taller1.evaluate.user;
 
 import com.sr.taller1.data.DataRecommendationModels;
+import com.sr.taller1.recommender.user.UserCosineRecommenderBuilder;
 import com.sr.taller1.recommender.user.UserJaccardRecommenderBuilder;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
@@ -21,10 +22,10 @@ public class UserCosineMain {
     }
 
     private void recommendAndEvaluate() throws IOException, TasteException {
-        UserJaccardRecommenderBuilder recommenderBuilder = new UserJaccardRecommenderBuilder();
+        UserCosineRecommenderBuilder recommenderBuilder = new UserCosineRecommenderBuilder();
 
         System.out.println("User Cosine");
-        DataModel artistModel = DataRecommendationModels.instace().getModel(DataRecommendationModels.artist_model);
+        DataModel artistModel = DataRecommendationModels.instance().getModel(DataRecommendationModels.artist_model);
         Recommender artistRecommender = recommenderBuilder.buildRecommender(artistModel);
         List<RecommendedItem> recommendations = artistRecommender.recommend(2, 3);
         for (RecommendedItem recommendation : recommendations) { System.out.println(recommendation);

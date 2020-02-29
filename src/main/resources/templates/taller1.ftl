@@ -39,7 +39,7 @@
 		        </div>
 
 		        <div class="col-md-4 mb-3">
-                  <label for="algoritmo">Tipo Recomendador</label>
+                  <label for="algoritmo">Algoritmo</label>
                   <select name="algoritmo" id="algoritmo" class="custom-select" required>
                     <option value="">Algoritmo ...</option>
                     <option value="jaccard">Jaccard</option>
@@ -47,12 +47,26 @@
                     <option value="pearson">Pearson</option>
                   </select>
                 </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="tipo_algoritmo">Tipo Algoritmo</label>
+                  <select name="tipo_algoritmo" id="tipo_algoritmo" class="custom-select" required>
+                    <option value="">Tipo algoritmo ...</option>
+                    <option value="item-item">item-item</option>
+                    <option value="user-user">user-user</option>
+                  </select>
+                 </div>
 		    
 
 				<div class="col-md-4 mb-3">
 				   <label for="user">User</label>
 				   <input type="text" class="form-control" name="user" id="user" placeholder="User" required>
 				</div>
+
+				<div class="col-md-4 mb-3">
+                   <label for="resultados">Resultados</label>
+                   <input type="number" class="form-control" name="resultados" id="resultados" placeholder="resultados" required>
+                </div>
 				
 
 			</div>

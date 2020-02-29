@@ -15,7 +15,7 @@ public class UserPearsonRecommenderBuilder implements RecommenderBuilder {
 
     public Recommender buildRecommender(DataModel dataModel) throws TasteException {
         UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
-        UserNeighborhood neighborhood = new NearestNUserNeighborhood(20,0.2, similarity, dataModel);
+        UserNeighborhood neighborhood = new NearestNUserNeighborhood(20,0.02, similarity, dataModel);
         return new GenericUserBasedRecommender(dataModel, neighborhood, similarity);
     }
 }

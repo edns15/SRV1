@@ -1,8 +1,7 @@
-package com.sr.evaluate.user;
+package com.sr.taller1.evaluate.user;
 
-import com.sr.data.DataRecommendationModels;
-import com.sr.recommender.user.UserJaccardRecommenderBuilder;
-import com.sr.recommender.user.UserPearsonRecommenderBuilder;
+import com.sr.taller1.data.DataRecommendationModels;
+import com.sr.taller1.recommender.user.UserJaccardRecommenderBuilder;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
 import org.apache.mahout.cf.taste.impl.eval.RMSRecommenderEvaluator;

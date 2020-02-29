@@ -1,7 +1,7 @@
-package com.sr.evaluate.item;
+package com.sr.taller1.evaluate.user;
 
-import com.sr.data.DataRecommendationModels;
-import com.sr.recommender.item.ItemJaccardRecommenderBuilder;
+import com.sr.taller1.data.DataRecommendationModels;
+import com.sr.taller1.recommender.user.UserJaccardRecommenderBuilder;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
 import org.apache.mahout.cf.taste.impl.eval.RMSRecommenderEvaluator;
@@ -12,18 +12,18 @@ import org.apache.mahout.cf.taste.recommender.Recommender;
 import java.io.IOException;
 import java.util.List;
 
-public class ItemJaccardMain {
+public class UserCosineMain {
 
     public static void main(String[] args) throws IOException, TasteException {
 
-        ItemJaccardMain pearson = new ItemJaccardMain();
+        UserCosineMain pearson = new UserCosineMain();
         pearson.recommendAndEvaluate();
     }
 
     private void recommendAndEvaluate() throws IOException, TasteException {
-        ItemJaccardRecommenderBuilder recommenderBuilder = new ItemJaccardRecommenderBuilder();
+        UserJaccardRecommenderBuilder recommenderBuilder = new UserJaccardRecommenderBuilder();
 
-        System.out.println("Item Jaccard");
+        System.out.println("User Cosine");
         DataModel artistModel = DataRecommendationModels.instace().getModel(DataRecommendationModels.artist_model);
         Recommender artistRecommender = recommenderBuilder.buildRecommender(artistModel);
         List<RecommendedItem> recommendations = artistRecommender.recommend(2, 3);

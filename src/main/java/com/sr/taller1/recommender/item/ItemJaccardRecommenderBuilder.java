@@ -1,4 +1,4 @@
-package com.sr.recommender.item;
+package com.sr.taller1.recommender.item;
 
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderBuilder;

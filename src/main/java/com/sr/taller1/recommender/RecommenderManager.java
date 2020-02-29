@@ -42,7 +42,7 @@ public class RecommenderManager {
         if(instance == null) {
             instance = new RecommenderManager();
             instance.initArtistRecommenders();
-            //instance.initTrackRecommenders();
+            instance.initTrackRecommenders();
         }
         return instance;
     }

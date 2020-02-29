@@ -163,7 +163,7 @@ public class DataRecommendationModels {
             userData.put(user,new GenericUserPreferenceArray(prefsUser));
         }
 
-        if(model.equals(trackModel))
+        if(model.equals(track_model))
             trackModel = new GenericDataModel(userData);
         else
             artistModel = new GenericDataModel(userData);

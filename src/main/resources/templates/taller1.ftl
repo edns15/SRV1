@@ -33,8 +33,8 @@
 				  <label for="tipoRecomendador">Tipo Recomendador</label>
 			      <select name="tipoRecomendador" id="tipoRecomendador" class="custom-select" required>
 			        <option value="">Tipo Recomendador ...</option>
-			      	<option value="canciones">Canciones</option>
-				    <option value="artistas">Artistas</option>
+			      	<option value="track_model">Canciones</option>
+				    <option value="artist_model">Artistas</option>
 				  </select>
 		        </div>
 
@@ -52,7 +52,7 @@
                   <label for="tipo_algoritmo">Tipo Algoritmo</label>
                   <select name="tipo_algoritmo" id="tipo_algoritmo" class="custom-select" required>
                     <option value="">Tipo algoritmo ...</option>
-                    <option value="item-item">item-item</option>
+                    <option value="algoritmo.equals("jaccard")">item-item</option>
                     <option value="user-user">user-user</option>
                   </select>
                  </div>
@@ -73,6 +73,27 @@
 			<button class="btn btn-primary" type="submit">Recomendar</button>
 		  </form>		
 		</div>
+
+		<#if recommendations ??>
+            <div class="container">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 <#list recommendations as recommendation>
+                  <tr class="success">
+                    <td>${recommendation.item}</td>
+                    <td>${recommendation.rating}</td>
+                  </tr>
+                  </#list>
+                </tbody>
+              </table>
+            </div>
+        </#if>
 
     </body>
 </html>

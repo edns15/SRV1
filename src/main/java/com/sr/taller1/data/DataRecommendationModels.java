@@ -40,7 +40,7 @@ public class DataRecommendationModels {
 
     private HashMap<Long,String> artist_ids= new HashMap<>();
     private HashMap<Long,String> track_ids= new HashMap<>();
-    private HashMap<Long,String> user_ids= new HashMap<>();
+    private HashMap<String,Long> user_ids= new HashMap<>();
 
     private DataRecommendationModels(){
     }
@@ -67,15 +67,15 @@ public class DataRecommendationModels {
                 String[] user = line.split(",");
                 Long userId = Long.parseLong(user[0]);
                 String userName = user[1];
-                user_ids.put(userId,userName);
+                user_ids.put(userName,userId);
             });
         } catch (IOException e) {
             throw e;
         }
     }
 
-    public String getUser(Long id){
-        return user_ids.get(id);
+    public Long getUser(String user){
+        return user_ids.get(user);
     }
 
     private void loadTracks() throws IOException {
@@ -112,7 +112,7 @@ public class DataRecommendationModels {
         }
     }
 
-    public String getArtis(Long id){
+    public String getArtist(Long id){
         return artist_ids.get(id);
     }
 

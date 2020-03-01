@@ -22,12 +22,6 @@ public class Taller1Controller {
     public Taller1Controller() throws IOException, TasteException {
     }
 
-    @RequestMapping("/t1_add_user_rating")
-    public ModelAndView t1UsuarioRating() {
-        Map<String, Object> model = new HashMap<>();
-        return new ModelAndView("taller1UsuarioRating", model);
-    }
-
     @RequestMapping("/t1_rc_artistas_canciones")
     public ModelAndView t1RcArtistasCanciones(@RequestParam Map<String, String> params) throws TasteException {
 

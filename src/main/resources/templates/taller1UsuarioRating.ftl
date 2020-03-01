@@ -30,8 +30,8 @@
                   <label for="tipoRecomendador">Tipo Recomendador</label>
                   <select name="tipoRecomendador" id="tipoRecomendador" class="custom-select" required>
                     <option value="">Tipo Recomendador ...</option>
-                    <option value="canciones">Canciones</option>
-                    <option value="artistas">Artistas</option>
+                    <option value="track_model">Canciones</option>
+                    <option value="artist_model">Artistas</option>
                   </select>
                 </div>
 		        

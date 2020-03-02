@@ -23,6 +23,25 @@ public class CreateRatingController {
         Map<String, Object> model = new HashMap<>();
 
 
+
+
+
         return new ModelAndView("taller1UsuarioRating", model);
+    }
+
+   @RequestMapping("/t1_added")
+    public ModelAndView t1AgregarUsuarioRating(@RequestParam Map<String, String> params){
+        Map<String, Object> model = new HashMap<>();
+        String tipoRecomendador = params.get("tipoRecomendador");
+        String user = params.get("user");
+        String item = params.get("item");
+        String rating = params.get("rating");
+
+        Long userL = Long.parseLong(user);
+        Long itemL = Long.parseLong(item);
+        Long ratingL = Long.parseLong("rating");
+
+       models.addRating(tipoRecomendador, userL, itemL,  ratingL);
+        return new ModelAndView("taller1", model);
     }
 }

@@ -56,7 +56,7 @@
                    </select>
                 </div>
 			</div>
-			<button class="btn btn-primary" type="submit">Agregar</button>
+			<button class="btn btn-primary" href="/sr" type="submit">Agregar</button>
 		  </form>		
 		</div>
 

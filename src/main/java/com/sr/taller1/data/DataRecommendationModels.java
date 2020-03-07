@@ -188,15 +188,25 @@ public class DataRecommendationModels {
 
         // Preferences for user
         HashMap<Long,Preference> prefsUser;
+        //getUsersAllCurrentStatus(user_preferences);
         if(!user_preferences.containsKey(user)) {
             prefsUser=new HashMap<>();
+            //System.out.println("Aceptado: " +user);
             user_preferences.put(user,prefsUser);
         }
-        else
+        else{
             prefsUser = user_preferences.get(user);
+            System.out.println(prefsUser.getClass());
+            //System.out.println("No Aceptado: " +user);
+        }
 
         prefsUser.put(item,new GenericPreference(user,item,rating));
     }
+
+    //public void getUsersAllCurrentStatus(HashMap<Long,HashMap<Long,Preference>> user_preferences){
+        
+        //return user_ids;
+    //}
 
     public DataModel getModel(String model) throws IOException {
         if( model.equals(track_model)){

@@ -33,14 +33,19 @@ public class CreateRatingController {
         String user = params.get("user");
         String item = params.get("item");
         String rating = params.get("rating");
+        System.out.println("El item: " +item);
 
         Long userL = Long.parseLong(user);
         Long itemL = Long.parseLong(item);
+        System.out.println("El long del item: " +item);
+        System.out.println("El long del usuario: " +userL);
+
+
         System.out.println(rating);
         Long ratingL = Long.parseLong(rating);
         //Long ratingL = Long.parseLong("rating");
 
-       models.addRating(tipoRecomendador, userL, itemL,  ratingL);
+        models.addRating(tipoRecomendador, userL, itemL,  ratingL);
         return new ModelAndView("taller1", model);
     }
 }

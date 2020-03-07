@@ -23,9 +23,6 @@ public class CreateRatingController {
         Map<String, Object> model = new HashMap<>();
 
 
-
-
-
         return new ModelAndView("taller1UsuarioRating", model);
     }
 
@@ -39,7 +36,9 @@ public class CreateRatingController {
 
         Long userL = Long.parseLong(user);
         Long itemL = Long.parseLong(item);
-        Long ratingL = Long.parseLong("rating");
+        System.out.println(rating);
+        Long ratingL = Long.parseLong(rating);
+        //Long ratingL = Long.parseLong("rating");
 
        models.addRating(tipoRecomendador, userL, itemL,  ratingL);
         return new ModelAndView("taller1", model);

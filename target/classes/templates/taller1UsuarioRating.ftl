@@ -23,7 +23,7 @@
         </div>
 		<br/>
 		<div class="container">
-		  <form name="add_user_rating" action="add_user_rating" method="POST">
+		  <form name="t1_added" action="t1_added" method="POST">
 		    <div class="form-row">
 
 		        <div class="col-md-4 mb-3">

@@ -60,5 +60,33 @@
 		  </form>		
 		</div>
 
+		<div class="container">
+                    <h2>Revelar usuarios</h2>
+                     <a class="btn btn-info btn-lg" href="show_user_list" role="button">Mostrar</a>
+         </div>
+
+		<#if recommendations ??>
+                    <div class="container">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Usuarios</th>
+                            <th scope="col">Items</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                         <#list recommendations as user>
+                          <tr class="success">
+                            <td>${user.userId}</td>
+                            <td>${user.trackId}</td>
+
+                          </tr>
+                          </#list>
+                        </tbody>
+                      </table>
+                    </div>
+                </#if>
+
     </body>
 </html>

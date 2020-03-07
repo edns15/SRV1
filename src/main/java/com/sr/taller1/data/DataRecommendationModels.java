@@ -78,6 +78,15 @@ public class DataRecommendationModels {
         return user_ids.get(user);
     }
 
+    public HashMap<String,Long> getUsersAllReady(){
+        return user_ids;
+    }
+
+    public HashMap<Long,String> getTracksAllReady(){
+        return track_ids;
+    }
+
+
     private void loadTracks() throws IOException {
         File file = this.loadFileFromResource(track_ids_file);
 

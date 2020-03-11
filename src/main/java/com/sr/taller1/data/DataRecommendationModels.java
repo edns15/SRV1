@@ -196,7 +196,7 @@ public class DataRecommendationModels {
         }
         else{
             prefsUser = user_preferences.get(user);
-            System.out.println(prefsUser.getClass());
+            //System.out.println(prefsUser.getClass());
             //System.out.println("No Aceptado: " +user);
         }
 
@@ -204,9 +204,13 @@ public class DataRecommendationModels {
     }
 
     //public void getUsersAllCurrentStatus(HashMap<Long,HashMap<Long,Preference>> user_preferences){
-        
+
         //return user_ids;
     //}
+
+    public void addUser(String userName, Long userId){
+        user_ids.put(userName,userId);
+    }
 
     public DataModel getModel(String model) throws IOException {
         if( model.equals(track_model)){

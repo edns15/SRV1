@@ -71,16 +71,16 @@
                         <thead>
                           <tr>
                             <th scope="col">Usuarios</th>
+                            <th scope="col">Id</th>
                             <th scope="col">Items</th>
-
                           </tr>
                         </thead>
                         <tbody>
                          <#list recommendations as user>
                           <tr class="success">
                             <td>${user.userId}</td>
+                            <td>${user.name}</td>
                             <td>${user.trackId}</td>
-
                           </tr>
                           </#list>
                         </tbody>

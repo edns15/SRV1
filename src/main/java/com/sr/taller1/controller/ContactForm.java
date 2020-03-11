@@ -30,6 +30,7 @@ public class ContactForm {
         usuarios = models.getUsersAllReady();
         tracks = models.getTracksAllReady();
 
+
         List<User> nuevaLista = listar(usuarios,tracks);
 
         Map<String, Object> model = new HashMap<>();
@@ -49,6 +50,8 @@ public class ContactForm {
     public List<User> listar(HashMap<String, Long> pUsuarios, HashMap<Long, String> pTracks) {
         List<String> result2 = new ArrayList(pUsuarios.keySet());
         List<Long> result3 = new ArrayList(pTracks.keySet());
+        List<Long> result4 = new ArrayList(pUsuarios.values());
+
 
 
         ArrayList<User> lista = new ArrayList<>();
@@ -69,8 +72,13 @@ public class ContactForm {
         for(int i = 0; i < result2.size(); i++){
 
             Long trackId = result3.get(i);
+            Long name = result4.get(i);
+
+
             User usuario = lista.get(i);
             usuario.setTrackId(trackId);
+            usuario.setName(name);
+
         }
 
         //Corregir, si hay más items que usuarios

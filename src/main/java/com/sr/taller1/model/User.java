@@ -4,12 +4,16 @@ public class User {
 
     private String userId;
     private long trackId;
+    private long name;
 
     public String getUserId() {
         return userId;
     }
     public long getTrackId() {
         return trackId;
+    }
+    public long getName() {
+        return name;
     }
 
 
@@ -18,6 +22,9 @@ public class User {
     }
     public void setTrackId(long userId) {
         this.trackId = userId;
+    }
+    public void setName(long name) {
+        this.name = name;
     }
 
 }
